@@ -1,4 +1,5 @@
 import { ProductInputtableTypes } from "../../src/database/models/product.model";
+import { Product } from "../../src/types/Product";
 
 const emptyNameProduct: ProductInputtableTypes = {
   name: '',
@@ -30,10 +31,18 @@ const validProduct: ProductInputtableTypes = {
   orderId: 4
 }
 
+const validProductFromDB: Product = {
+  id: 4,
+  name: 'Martelo de Thor',
+  price: '30 peças de ouro',
+  orderId: 4
+}
+
 export default {
   emptyNameProduct,
   shortNameProduct,
   emptyPriceProduct,
   shortPriceProduct,
-  validProduct
+  validProduct,
+  validProductFromDB
 }
