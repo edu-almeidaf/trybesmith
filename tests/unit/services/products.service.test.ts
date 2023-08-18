@@ -7,7 +7,7 @@ import productsService from '../../../src/services/products.service';
 describe('ProductsService', function () {
   beforeEach(function () { sinon.restore(); });
 
-  describe('#create', function () {
+  describe('#createProduct', function () {
     it('É possível cadastrar um produto com sucesso', async function () {
       const mockCreateReturn = ProductModel.build(productsMock.validProductFromDB);
       sinon.stub(ProductModel, 'create').resolves(mockCreateReturn);
@@ -57,5 +57,19 @@ describe('ProductsService', function () {
       expect(serviceResponse.status).to.eq('UNPROCESSABLE_ENTITY');
       expect(serviceResponse.data).to.deep.eq({ message: '"price" length must be at least 3 characters long' });
     });
-  })
+  });
+
+  describe('#getProducts', function () {
+    // it('Lista todos os produtos com sucesso', async function () {
+    //   const mockFindAllReturn = productsMock.getProductsMockFromDB.map((product) => (
+    //     ProductModel.build(product)
+    //   ))
+    //   sinon.stub(ProductModel, 'findAll').resolves(mockFindAllReturn);
+
+    //   const serviceResponse = await productsService.createProduct(productsMock.validProduct);
+
+    //   expect(serviceResponse.status).to.eq('SUCCESSFUL');
+    //   expect(serviceResponse.data).to.deep.eq(productsMock.validProductFromDB);
+    // });
+  });
 });
