@@ -15,7 +15,7 @@ const getOrders = async (): Promise<ServiceResponse<Order[]>> => {
   const newOrders = orders.map(({ dataValues }) => ({
     id: dataValues.id,
     userId: dataValues.userId,
-    productIds: dataValues.productIds?.map((product) => product.id),
+    productIds: dataValues.productIds?.map((product) => product.id).sort(),
   }));
   
   return { status: 'SUCCESSFUL', data: newOrders as Order[] };

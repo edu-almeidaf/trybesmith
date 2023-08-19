@@ -58,18 +58,4 @@ describe('ProductsService', function () {
       expect(serviceResponse.data).to.deep.eq({ message: '"price" length must be at least 3 characters long' });
     });
   });
-
-  describe('#getProducts', function () {
-    // it('Lista todos os produtos com sucesso', async function () {
-    //   const mockFindAllReturn = productsMock.getProductsMockFromDB.map((product) => (
-    //     ProductModel.build(product)
-    //   ))
-    //   sinon.stub(ProductModel, 'findAll').resolves(mockFindAllReturn);
-
-    //   const serviceResponse = await productsService.createProduct(productsMock.validProduct);
-
-    //   expect(serviceResponse.status).to.eq('SUCCESSFUL');
-    //   expect(serviceResponse.data).to.deep.eq(productsMock.validProductFromDB);
-    // });
-  });
 });
